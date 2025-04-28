@@ -50,3 +50,18 @@ sequenceDiagram
     BancoDados->>Servidor: Dados
     Servidor->>Navegador: JSON
 ```
+# Passo a passo do Consumo de API no Front-end
+
+```mermaid
+flowchart TD
+    A[Usuário acessa a página HTML] --> B[HTML monta a tabela vazia - tbody com id tabela-veiculos]
+    B --> C[JavaScript dispara window.onload e chama carregarVeiculos]
+    C --> D[Função carregarVeiculos faz fetch para /veiculos_json]
+    D --> E[Servidor responde com lista JSON dos veículos]
+    E --> F[JavaScript transforma JSON em objetos]
+    F --> G[Para cada veículo cria uma linha tr com os dados]
+    G --> H[Adiciona cada linha ao tbody da tabela]
+    H --> I[Tabela aparece preenchida para o usuário]
+```
+
+
